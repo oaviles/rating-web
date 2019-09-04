@@ -40,7 +40,7 @@ export default {
 
 body {
 
-  background-color: #999;
+  background-color: #0071c5;
 
   --azure-blue: #0071c5;
 
