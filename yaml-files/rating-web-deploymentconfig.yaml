@@ -1,0 +1,19 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: aro-rating-web
+  namespace: aro-workshop-lab-cicd
+spec:
+  selector:
+    app: aro-rating-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aro-rating-web
+    spec:
+      containers:
+        - name: aro-rating-web
+          image: oaviles/aro-rating-web:latest
+          ports:
+            - containerPort: 8080
