@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: aro-rating-web
+  namespace: aro-workshop-lab-cicd
+  labels:
+    app: aro-rating-web
+    app.kubernetes.io/component: aro-rating-web
+    app.kubernetes.io/instance: aro-rating-web
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    deploymentconfig: aro-rating-web
